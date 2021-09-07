@@ -2,9 +2,10 @@ version: '3'
 
 services:
   v2ray:
-    container_name: v2ray
-    image: v2ray/official:latest
+    container_name: v2ray-local
+    image: v2ray-local:latest
+    build: .
     volumes:
-      - ./.secret/config.json:/etc/v2ray/config.json
+      - ./.secret:/.secret
     network_mode: host
     restart: always
