@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  v2ray:
+    container_name: v2ray
+    image: v2ray/official:latest
+    volumes:
+      - ./.secret/config.json:/etc/v2ray/config.json
+    network_mode: host
+    restart: always
